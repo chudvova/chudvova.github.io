@@ -27912,7 +27912,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.acts.SetWidth,
 	cr.plugins_.vkontakte.prototype.cnds.IsReady,
 	cr.plugins_.vkontakte.prototype.exps.OwnDataJsonArr,
-	cr.plugins_.vkontakte.prototype.acts.FriendsGet,
 	cr.plugins_.vkontakte.prototype.acts.AppUsersGet,
 	cr.plugins_.vkontakte.prototype.cnds.onAppUsersLoad,
 	cr.plugins_.vkontakte.prototype.exps.FriensDataJsonArr,
