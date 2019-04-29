@@ -27913,5 +27913,9 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.vkontakte.prototype.cnds.IsReady,
 	cr.plugins_.vkontakte.prototype.exps.OwnDataJsonArr,
 	cr.plugins_.vkontakte.prototype.acts.PublishToWall,
-	cr.plugins_.Spritefont2.prototype.acts.Destroy
+	cr.plugins_.Spritefont2.prototype.acts.Destroy,
+	cr.plugins_.vkontakte.prototype.cnds.onAppUsersLoad,
+	cr.plugins_.vkontakte.prototype.exps.FriensDataJsonArr,
+	cr.plugins_.Arr.prototype.cnds.CompareX,
+	cr.plugins_.vkontakte.prototype.acts.ShowInviteBox
 ];};

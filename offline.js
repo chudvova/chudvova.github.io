@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1556563863,
+	"version": 1556564955,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -107,6 +107,13 @@
 		"images/fonvktitle-sheet0.png",
 		"images/spritefontvk.png",
 		"images/button_sharevk-sheet0.png",
+		"images/vk_fon_ava-sheet0.png",
+		"images/vk_ava-sheet0.png",
+		"images/vk_ramka-sheet0.png",
+		"images/sprite7-sheet0.png",
+		"images/sprite9-sheet0.png",
+		"images/sprite10-sheet0.png",
+		"images/addfriend-sheet0.png",
 		"media/touch.ogg",
 		"media/addgold.ogg",
 		"media/swap.ogg",
