@@ -1,9 +1,9 @@
 ﻿{
-	"name": "Treasure island",
-	"short_name": "Treasure island",
+	"name": "New project",
+	"short_name": "New project",
 	"start_url": "index.html",
-	"display": "fullscreen",
-	"orientation": "landscape",
+	"display": "standalone",
+	"orientation": "any",
 	"icons": [{
 		"src": "icon-16.png",
 		"sizes": "16x16",
