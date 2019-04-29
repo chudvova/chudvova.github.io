@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1556564955,
+	"version": 1556566991,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -23,6 +23,7 @@
 		"images/effect-sheet1.png",
 		"images/effect-sheet2.png",
 		"images/effect_level-sheet0.png",
+		"images/the_end_effect-sheet0.png",
 		"images/highscorefont.png",
 		"images/lastscorefont.png",
 		"images/spritefont.png",
@@ -92,6 +93,7 @@
 		"images/javascript2-sheet0.png",
 		"images/javascript3-sheet0.png",
 		"images/sprite-sheet0.png",
+		"images/sprite2-sheet0.png",
 		"images/sprite4-sheet0.png",
 		"images/sprite5-sheet0.png",
 		"images/sprite6-sheet0.png",
