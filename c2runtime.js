@@ -28782,9 +28782,9 @@ cr.behaviors.lunarray_LiteTween = function(runtime)
 }());
 cr.getObjectRefTable = function () { return [
 	cr.plugins_.NinePatch,
-	cr.plugins_.Audio,
-	cr.plugins_.Arr,
 	cr.plugins_.GoogleAnalytics_ST,
+	cr.plugins_.Arr,
+	cr.plugins_.Audio,
 	cr.plugins_.Browser,
 	cr.plugins_.ExtendedVkApi,
 	cr.plugins_.Function,
@@ -28924,6 +28924,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.acts.SetWidth,
 	cr.plugins_.vkontakte.prototype.cnds.IsReady,
 	cr.plugins_.vkontakte.prototype.exps.OwnDataJsonArr,
+	cr.plugins_.ExtendedVkApi.prototype.acts.FriendsGet,
 	cr.plugins_.vkontakte.prototype.cnds.onAppUsersLoad,
 	cr.plugins_.vkontakte.prototype.exps.AppUsersDataJsonArr,
 	cr.plugins_.Arr.prototype.cnds.CompareX,
