@@ -25365,16 +25365,24 @@ cr.plugins_.vkontakte = function(runtime)
             VK.api('friends.getAppUsers', getparam, function(data) {
                 if (data.response) {
                     var sizecounter = 0;
+                    var sizeficounter = 0;
                     var JsonAr2Constract = new Object();
                     var inner = [];
                     JsonAr2Constract["c2array"] = 1;
                     jQuery.each(data.response, function(i, val) {
-                        inner[i] = [[val]];
+                        var innerfields = [];
+                        sizeficounter = 0;
+                        jQuery.each(fielsd_split, function(i2, val2) {
+                            var trimfields = val2.trim();
+                            innerfields.push([val[trimfields]]);
+                            sizeficounter++;
+                        });
+                        inner[i] = innerfields;
                         sizecounter++;
                     });
                     JsonAr2Constract["data"] = inner;
-                    JsonAr2Constract["size"] = [sizecounter, '1', '1'];
-                    vkAppUsersDataJsonArr = JSON.stringify(JsonAr2Constract);
+                    JsonAr2Constract["size"] = [sizecounter, sizeficounter, '1'];
+                    vkFriensDataJsonArr = JSON.stringify(JsonAr2Constract);
                     vkRuntime.trigger(cr.plugins_.vkontakte.prototype.cnds.onAppUsersLoad, vkInst);
                     console.log('Construct2-VK: AppUsers loaded');
                 }
