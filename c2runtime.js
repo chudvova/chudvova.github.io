@@ -27916,10 +27916,12 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.vkontakte.prototype.exps.OwnDataJsonArr,
 	cr.plugins_.vkontakte.prototype.cnds.onAppUsersLoad,
 	cr.plugins_.vkontakte.prototype.exps.AppUsersDataJsonArr,
+	cr.system_object.prototype.exps.newline,
+	cr.plugins_.vkontakte.prototype.cnds.onFrLoad,
+	cr.plugins_.vkontakte.prototype.exps.FriensDataJsonArr,
 	cr.plugins_.vkontakte.prototype.acts.PublishToWall,
 	cr.plugins_.Spritefont2.prototype.acts.Destroy,
 	cr.plugins_.Arr.prototype.cnds.CompareX,
 	cr.plugins_.vkontakte.prototype.acts.ShowInviteBox,
-	cr.plugins_.Text.prototype.acts.SetText,
-	cr.system_object.prototype.exps.newline
+	cr.plugins_.Text.prototype.acts.SetText
 ];};
