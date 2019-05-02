@@ -19866,7 +19866,7 @@ cr.plugins_.ExtendedVkApi = function(runtime)
         this.runtime = type.runtime;
     };
     var instanceProto = pluginProto.Instance.prototype;
-    var QueryString = function () {
+    var QueryString = function() {
         var query_string = {};
         var query = window.location.search.substring(1);
         var vars = query.split("&");
@@ -19893,27 +19893,26 @@ cr.plugins_.ExtendedVkApi = function(runtime)
         vkAppID = this.properties[0];
         vkRuntime = this.runtime;
         vkInst = this;
-        window.onload = function() {
-            if(QueryString["viewer_id"])
-            {
-                VK.init(function() {
-                    VK.api('users.get',{
-                        "uids" : QueryString["viewer_id"],
-                        "fields" : "uid, first_name, last_name, sex, bdate, city, country, timezone, photo, photo_medium, photo_big"
-                    },function(data) {
-                        if (data.response) {
-                            vkOwnDataJsonArr = '';
-                            var val = data.response[0];
-                            var JsonAr2Constract = new Object();
-                            var inner = [];
-                            JsonAr2Constract["c2array"] = 1;
-                            inner["0"] = [[val["uid"]],[val["first_name"]],[val["last_name"]],[val["sex"]],[val["bdate"]],[val["city"]],[val["country"]],[val["timezone"]],[val["photo"]],[val["photo_medium"]],[val["photo_big"]]];
-                            JsonAr2Constract["data"] = inner;
-                            JsonAr2Constract["size"] = ['1','12','1'];
-                            vkOwnDataJsonArr = JSON.stringify(JsonAr2Constract);
-                            vkReady = true;
-                            vkRuntime.trigger(cr.plugins_.ExtendedVkApi.prototype.cnds.OnReady, vkInst);
-                            console.log('Construct2-VK: OnReady trigger');
+        if (QueryString["viewer_id"])
+        {
+            VK.init(function() {
+                VK.api('users.get', {
+                    "uids": QueryString["viewer_id"],
+                    "fields": "uid, first_name, last_name, sex, bdate, city, country, timezone, photo, photo_medium, photo_big"
+                }, function(data) {
+                    if (data.response) {
+                        vkOwnDataJsonArr = '';
+                        var val = data.response[0];
+                        var JsonAr2Constract = new Object();
+                        var inner = [];
+                        JsonAr2Constract["c2array"] = 1;
+                        inner["0"] = [[val["uid"]], [val["first_name"]], [val["last_name"]], [val["sex"]], [val["bdate"]], [val["city"]], [val["country"]], [val["timezone"]], [val["photo"]], [val["photo_medium"]], [val["photo_big"]]];
+                        JsonAr2Constract["data"] = inner;
+                        JsonAr2Constract["size"] = ['1', '12', '1'];
+                        vkOwnDataJsonArr = JSON.stringify(JsonAr2Constract);
+                        vkReady = true;
+                        vkRuntime.trigger(cr.plugins_.vkontakte.prototype.cnds.OnReady, vkInst);
+                        console.log('Construct2-VK: OnReady trigger' + vkOwnDataJsonArr);
                         }
                     });
                 });
@@ -28782,10 +28781,10 @@ cr.behaviors.lunarray_LiteTween = function(runtime)
 }());
 cr.getObjectRefTable = function () { return [
 	cr.plugins_.NinePatch,
-	cr.plugins_.Arr,
 	cr.plugins_.Audio,
-	cr.plugins_.Browser,
+	cr.plugins_.Arr,
 	cr.plugins_.GoogleAnalytics_ST,
+	cr.plugins_.Browser,
 	cr.plugins_.ExtendedVkApi,
 	cr.plugins_.Function,
 	cr.plugins_.Particles,
@@ -28924,14 +28923,15 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.acts.SetWidth,
 	cr.plugins_.vkontakte.prototype.cnds.IsReady,
 	cr.plugins_.vkontakte.prototype.exps.OwnDataJsonArr,
+	cr.plugins_.ExtendedVkApi.prototype.cnds.OnReady,
 	cr.plugins_.ExtendedVkApi.prototype.acts.FriendsGet,
-	cr.plugins_.vkontakte.prototype.cnds.onAppUsersLoad,
-	cr.plugins_.vkontakte.prototype.exps.AppUsersDataJsonArr,
-	cr.plugins_.Arr.prototype.cnds.CompareX,
 	cr.plugins_.ExtendedVkApi.prototype.cnds.OnReadyAppFriends,
+	cr.plugins_.vkontakte.prototype.exps.AppUsersDataJsonArr,
+	cr.plugins_.vkontakte.prototype.cnds.onAppUsersLoad,
+	cr.plugins_.Text.prototype.acts.SetText,
+	cr.system_object.prototype.exps.newline,
+	cr.plugins_.Arr.prototype.cnds.CompareX,
 	cr.plugins_.vkontakte.prototype.acts.PublishToWall,
 	cr.plugins_.Spritefont2.prototype.acts.Destroy,
-	cr.plugins_.vkontakte.prototype.acts.ShowInviteBox,
-	cr.plugins_.Text.prototype.acts.SetText,
-	cr.system_object.prototype.exps.newline
+	cr.plugins_.vkontakte.prototype.acts.ShowInviteBox
 ];};
