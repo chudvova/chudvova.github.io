@@ -25361,7 +25361,9 @@ cr.plugins_.vkontakte = function(runtime)
         if (this.runtime.isDomFree || !vkReady)
             return;
         VK.init(function() {
-            var getparam = {};
+            var getparam = {
+				"fields" : "id"
+			};
             VK.api('friends.getAppUsers', getparam, function(data) {
                 if (data.response) {
                     var sizecounter = 0;
@@ -25373,7 +25375,7 @@ cr.plugins_.vkontakte = function(runtime)
                         sizecounter++;
                     });
                     JsonAr2Constract["data"] = inner;
-                    JsonAr2Constract["size"] = [sizecounter, '1', '1'];
+                    JsonAr2Constract["size"] = [sizecounter, sizecounter, '1'];
                     vkAppUsersDataJsonArr = JSON.stringify(JsonAr2Constract);
                     vkRuntime.trigger(cr.plugins_.vkontakte.prototype.cnds.onAppUsersLoad, vkInst);
                     console.log('Construct2-VK: AppUsers loaded');
@@ -27773,10 +27775,10 @@ cr.behaviors.lunarray_LiteTween = function(runtime)
 }());
 cr.getObjectRefTable = function () { return [
 	cr.plugins_.NinePatch,
-	cr.plugins_.Arr,
 	cr.plugins_.Audio,
-	cr.plugins_.Browser,
+	cr.plugins_.Arr,
 	cr.plugins_.GoogleAnalytics_ST,
+	cr.plugins_.Browser,
 	cr.plugins_.Function,
 	cr.plugins_.Particles,
 	cr.plugins_.Sprite,
@@ -27921,6 +27923,5 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.exps.newline,
 	cr.plugins_.vkontakte.prototype.acts.PublishToWall,
 	cr.plugins_.Spritefont2.prototype.acts.Destroy,
-	cr.plugins_.vkontakte.prototype.acts.ShowInviteBox,
-	cr.plugins_.Arr.prototype.cnds.CompareX
+	cr.plugins_.vkontakte.prototype.acts.ShowInviteBox
 ];};
