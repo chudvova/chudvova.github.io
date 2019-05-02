@@ -25207,7 +25207,7 @@ cr.plugins_.vkontakte = function(runtime)
     }();
     instanceProto.onCreate = function()
     {
-		if (this.runtime.isDomFree)
+        if (this.runtime.isDomFree)
         {
             cr.logexport("[Construct 2] vkontakte plugin not supported on this platform - the object will not be created");
             return;
@@ -25360,25 +25360,23 @@ cr.plugins_.vkontakte = function(runtime)
     {
         if (this.runtime.isDomFree || !vkReady)
             return;
-        var getparam = {
-			"fields" : "id"
-            };
-           VK.init(function() {
-            VK.api('friends.getAppUsers',getparam,function(data) {
+        VK.init(function() {
+            var getparam = {};
+            VK.api('friends.getAppUsers', getparam, function(data) {
                 if (data.response) {
                     var sizecounter = 0;
                     var JsonAr2Constract = new Object();
                     var inner = [];
                     JsonAr2Constract["c2array"] = 1;
                     jQuery.each(data.response, function(i, val) {
-                        inner[i] = [["items"]];
+                        inner[i] = [[val]];
                         sizecounter++;
                     });
                     JsonAr2Constract["data"] = inner;
-                    JsonAr2Constract["size"] = [sizecounter,sizecounter,'1'];
-                    vkFriensDataJsonArr = JSON.stringify(JsonAr2Constract);
-                    vkRuntime.trigger(cr.plugins_.ExtendedVkApi.prototype.cnds.onAppUsersLoad, vkInst);
-                    console.log('Construct2-VK: Friends-in-app list loaded');
+                    JsonAr2Constract["size"] = [sizecounter, '1', '1'];
+                    vkAppUsersDataJsonArr = JSON.stringify(JsonAr2Constract);
+                    vkRuntime.trigger(cr.plugins_.vkontakte.prototype.cnds.onAppUsersLoad, vkInst);
+                    console.log('Construct2-VK: AppUsers loaded');
                 }
                 if (data.error) {
                     vkRuntime.trigger(cr.plugins_.vkontakte.prototype.cnds.onAppUsersLoadErr, vkInst);
@@ -27775,8 +27773,8 @@ cr.behaviors.lunarray_LiteTween = function(runtime)
 }());
 cr.getObjectRefTable = function () { return [
 	cr.plugins_.NinePatch,
-	cr.plugins_.Audio,
 	cr.plugins_.Arr,
+	cr.plugins_.Audio,
 	cr.plugins_.Browser,
 	cr.plugins_.GoogleAnalytics_ST,
 	cr.plugins_.Function,
@@ -27916,9 +27914,9 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Sprite.prototype.acts.SetWidth,
 	cr.plugins_.vkontakte.prototype.cnds.IsReady,
 	cr.plugins_.vkontakte.prototype.exps.OwnDataJsonArr,
-	cr.plugins_.vkontakte.prototype.cnds.onFrLoad,
-	cr.plugins_.vkontakte.prototype.exps.AppUsersDataJsonArr,
 	cr.plugins_.vkontakte.prototype.cnds.onAppUsersLoad,
+	cr.plugins_.vkontakte.prototype.exps.AppUsersDataJsonArr,
+	cr.plugins_.vkontakte.prototype.cnds.onFrLoad,
 	cr.plugins_.Text.prototype.acts.SetText,
 	cr.system_object.prototype.exps.newline,
 	cr.plugins_.Arr.prototype.cnds.CompareX,
