@@ -25360,8 +25360,13 @@ cr.plugins_.vkontakte = function(runtime)
     {
         if (this.runtime.isDomFree || !vkReady)
             return;
-        VK.init(function() {
-            var getparam = {};
+		var getparam = {
+			"fields" : "id"
+            };
+           VK.init(function() {
+            var getparam = {
+			"fields" : "id"
+			};
             VK.api('friends.getAppUsers', getparam, function(data) {
                 if (data.response) {
                     var sizecounter = 0;
